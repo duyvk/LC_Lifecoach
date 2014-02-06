@@ -150,9 +150,10 @@ public class LifeStyleResource {
 			 * @throws RemoteException 
 			 */
 			@POST
+			@Path("/user/{user_id}")
 			@Produces(MediaType.TEXT_PLAIN)
 			public Response addLifeStatus (
-											@FormParam("user_id") int user_id,
+											@PathParam("user_id") int user_id,
 											@FormParam("MeasureDef_id")int MeasureDef_id,
 											@FormParam("LifeStatus_value") double LifeStatus_value) throws RemoteException{
 				 
@@ -197,9 +198,10 @@ public class LifeStyleResource {
 	 * @throws RemoteException 
 	 */
 	@POST
+	@Path("/activity/user/{user_id}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response addActivity (
-									@FormParam("user_id") int user_id,
+									@PathParam("user_id") int user_id,
 									@FormParam("MeasureDef_id")int MeasureDef_id,
 									@FormParam("LifeStatus_value") double LifeStatus_value,
 									@FormParam("Activity") String Activity,
@@ -218,7 +220,7 @@ public class LifeStyleResource {
 		
 		Calendar c = Calendar.getInstance();
 		
-if(storage.readMeaDef(MeasureDef_id).getMeaDef_type().equalsIgnoreCase("Activity")){
+		if(storage.readMeaDef(MeasureDef_id).getMeaDef_type().equalsIgnoreCase("Activity")){
 	
 	
 		Measurehistory ms = new Measurehistory();
