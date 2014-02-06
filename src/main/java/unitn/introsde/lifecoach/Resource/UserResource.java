@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -17,7 +18,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 
 import unitn.introsde.storage_service.ws.Storage;
 import unitn.introsde.storage_service.ws.StorageProxy;
@@ -32,19 +32,21 @@ public class UserResource {
 	StorageProxy storage = new StorageProxy();
 	
 	@GET
-	@Path("/{user_Id}")
-	@Produces({MediaType.APPLICATION_JSON })
+	@Path("{user_Id}")
+	@Consumes({MediaType.APPLICATION_XML})
+	@Produces("application/json")
 	public User getUserById(@PathParam("user_Id") int user_Id){
 		
-		User user=null;
+		
 		try {
-			user = storage.readUser(user_Id);
+			User user = storage.readUser(user_Id);
+			return user;
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return user;
+		return new User();
 		
 	}
 	

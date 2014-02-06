@@ -7,6 +7,9 @@
 
 package unitn.introsde.storage_service.ws;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class User  implements java.io.Serializable {
     private java.util.Calendar userBirthDate;
 
