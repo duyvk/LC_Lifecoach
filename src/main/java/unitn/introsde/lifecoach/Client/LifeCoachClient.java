@@ -59,8 +59,8 @@ public class LifeCoachClient {
 				"\t6. Send   Tasks/Reminder/Caregiver/{cg_id}  sending reminder for users about the tasks of the day \n" +
 				"0. exit ^_^"
 				;
-		
-		System.out.println(options);
+	
+
 		
 		ClientConfig config = new DefaultClientConfig();
         Client client = Client.create(config);
@@ -75,7 +75,7 @@ public class LifeCoachClient {
         	while (selected !=0){
 
         		
-        		String firstname,lastname,gender,email,birthdate;
+        		String firstname,lastname,gender,email, birthdate;
         		int user_id;
         		
         		switch (selected) {
@@ -97,11 +97,11 @@ public class LifeCoachClient {
 							lastname=br.readLine();
                     
 							System.out.println("Enter the user birthdate");
-							Calendar c = Calendar.getInstance();
-							//c.setTime(br.readLine());
-						//	birthdate==c.getTime();
+							
+						//	c.setTime(;
+							birthdate=br.readLine();
                     
-					/*		System.out.println("Enter the user email ");
+							System.out.println("Enter the user email ");
 							email=br.readLine();
                  
 							System.out.println("Enter the user gender (Male/Female) ");
@@ -110,9 +110,9 @@ public class LifeCoachClient {
 							
 							resource = client.resource(url);
 							System.out.println(resource);
+				            addUser(resource, firstname, lastname, gender, email, birthdate);
 				
-							updateUserTask(resource, ttid, cg_id, schfromtime, schaddress, schcgchecked, schuserchecked, schnote, schsttus, schtotime);
-				*/
+				
 							break;
         		}
 				System.out.println(options);
@@ -173,8 +173,8 @@ public class LifeCoachClient {
 	 * @param tstatus the task status
 	 * @param ttotime the task to time
 	 */
-	private void addTask(WebResource resource,String firstname, String lastname,
-			String gender,String email,Date birthdate){
+	private void addUser(WebResource resource,String firstname, String lastname,
+			String gender,String email,String birthdate){
 		
 		System.out.println(resource.getURI());
 		

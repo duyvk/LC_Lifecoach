@@ -1,6 +1,5 @@
 package unitn.introsde.lifecoach.Client;
 
-
 import java.io.IOException;
 import java.net.InetAddress;
 
@@ -27,6 +26,7 @@ public class LifeCoachServer {
 	public static void main(String[] args) {
 		try {
 			new LifeCoachServer();
+
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,5 +34,8 @@ public class LifeCoachServer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		
 	}
 }
+
