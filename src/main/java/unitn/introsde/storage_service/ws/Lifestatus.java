@@ -7,9 +7,6 @@
 
 package unitn.introsde.storage_service.ws;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Lifestatus  implements java.io.Serializable {
     private int lifeStatus_id;
 

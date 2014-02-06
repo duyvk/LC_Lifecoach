@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java/unitn/introsde/storage_service/ws/Caregiver.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Externalsource.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Food.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Foodtrack.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Goal.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Lifestatus.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Measuredefinition.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Measurehistory.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Scheduledtask.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Storage.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/StorageImplPortBindingStub.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/StorageService.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/StorageServiceLocator.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/Tasktype.java=UTF-8
+encoding//src/main/java/unitn/introsde/storage_service/ws/User.java=UTF-8

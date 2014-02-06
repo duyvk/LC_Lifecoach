@@ -60,4 +60,12 @@ public interface Storage extends java.rmi.Remote {
     public unitn.introsde.storage_service.ws.Foodtrack[] getFoodTrackOfUserByTimeRange(int user_id, java.util.Calendar fromDate, java.util.Calendar toDate) throws java.rmi.RemoteException;
     public java.lang.String getFoodInforOfFoodTrack(int foodTrack_id) throws java.rmi.RemoteException;
     public int getFoodCaloriesOfFoodTrack(int foodTrack_id) throws java.rmi.RemoteException;
+    public unitn.introsde.storage_service.ws.Scheduledtask readTask(int task_id) throws java.rmi.RemoteException;
+    public int createTask(unitn.introsde.storage_service.ws.Scheduledtask task) throws java.rmi.RemoteException;
+    public int updateTask(unitn.introsde.storage_service.ws.Scheduledtask task) throws java.rmi.RemoteException;
+    public boolean removeTask(int task_id) throws java.rmi.RemoteException;
+    public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksByUserId(int user_id) throws java.rmi.RemoteException;
+    public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksByCaregiverId(int cg_id) throws java.rmi.RemoteException;
+    public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksTodayByUserId(int user_id) throws java.rmi.RemoteException;
+    public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksTodayByCaregiverId(int cg_id) throws java.rmi.RemoteException;
 }

@@ -212,10 +212,34 @@ public class StorageProxy implements unitn.introsde.storage_service.ws.Storage {
     return storage.removeMeaDef(meaDef_id);
   }
   
+  public unitn.introsde.storage_service.ws.Measurehistory readMeasureHistory(int measureHistory_id) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.readMeasureHistory(measureHistory_id);
+  }
+  
+  public int creatMeasureHistory(unitn.introsde.storage_service.ws.Measurehistory measureHistory) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.creatMeasureHistory(measureHistory);
+  }
+  
+  public int updateMeasureHistory(int user_id, unitn.introsde.storage_service.ws.Measurehistory measurehistory) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.updateMeasureHistory(user_id, measurehistory);
+  }
+  
   public int createLifeStatus(unitn.introsde.storage_service.ws.Lifestatus lifeStatus) throws java.rmi.RemoteException{
     if (storage == null)
       _initStorageProxy();
     return storage.createLifeStatus(lifeStatus);
+  }
+  
+  public int updateLifeStatus(int user_id, unitn.introsde.storage_service.ws.Lifestatus lifestatus) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.updateLifeStatus(user_id, lifestatus);
   }
   
   public unitn.introsde.storage_service.ws.Lifestatus readLifeStatus(int lifeStatus_id) throws java.rmi.RemoteException{
@@ -332,28 +356,52 @@ public class StorageProxy implements unitn.introsde.storage_service.ws.Storage {
     return storage.getFoodCaloriesOfFoodTrack(foodTrack_id);
   }
   
-  public int updateLifeStatus(int user_id, unitn.introsde.storage_service.ws.Lifestatus lifestatus) throws java.rmi.RemoteException{
+  public unitn.introsde.storage_service.ws.Scheduledtask readTask(int task_id) throws java.rmi.RemoteException{
     if (storage == null)
       _initStorageProxy();
-    return storage.updateLifeStatus(user_id, lifestatus);
+    return storage.readTask(task_id);
   }
   
-  public int creatMeasureHistory(unitn.introsde.storage_service.ws.Measurehistory measureHistory) throws java.rmi.RemoteException{
+  public int createTask(unitn.introsde.storage_service.ws.Scheduledtask task) throws java.rmi.RemoteException{
     if (storage == null)
       _initStorageProxy();
-    return storage.creatMeasureHistory(measureHistory);
+    return storage.createTask(task);
   }
   
-  public int updateMeasureHistory(int user_id, unitn.introsde.storage_service.ws.Measurehistory measurehistory) throws java.rmi.RemoteException{
+  public int updateTask(unitn.introsde.storage_service.ws.Scheduledtask task) throws java.rmi.RemoteException{
     if (storage == null)
       _initStorageProxy();
-    return storage.updateMeasureHistory(user_id, measurehistory);
+    return storage.updateTask(task);
   }
   
-  public unitn.introsde.storage_service.ws.Measurehistory readMeasureHistory(int measureHistory_id) throws java.rmi.RemoteException{
+  public boolean removeTask(int task_id) throws java.rmi.RemoteException{
     if (storage == null)
       _initStorageProxy();
-    return storage.readMeasureHistory(measureHistory_id);
+    return storage.removeTask(task_id);
+  }
+  
+  public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksByUserId(int user_id) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.getTasksByUserId(user_id);
+  }
+  
+  public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksByCaregiverId(int cg_id) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.getTasksByCaregiverId(cg_id);
+  }
+  
+  public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksTodayByUserId(int user_id) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.getTasksTodayByUserId(user_id);
+  }
+  
+  public unitn.introsde.storage_service.ws.Scheduledtask[] getTasksTodayByCaregiverId(int cg_id) throws java.rmi.RemoteException{
+    if (storage == null)
+      _initStorageProxy();
+    return storage.getTasksTodayByCaregiverId(cg_id);
   }
   
   
