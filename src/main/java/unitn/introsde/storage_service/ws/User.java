@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class User  implements java.io.Serializable {
-    private java.util.Calendar userBirthDate;
+    private java.util.Date userBirthDate;
 
     private java.lang.String userEmail;
 
@@ -22,12 +22,13 @@ public class User  implements java.io.Serializable {
     private int userId;
 
     private java.lang.String userLastName;
-
+    
+    
     public User() {
     }
 
     public User(
-           java.util.Calendar userBirthDate,
+           java.util.Date userBirthDate,
            java.lang.String userEmail,
            java.lang.String userFirstName,
            java.lang.String userGender,
@@ -47,7 +48,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return userBirthDate
      */
-    public java.util.Calendar getUserBirthDate() {
+    public java.util.Date getUserBirthDate() {
         return userBirthDate;
     }
 
@@ -57,7 +58,7 @@ public class User  implements java.io.Serializable {
      * 
      * @param userBirthDate
      */
-    public void setUserBirthDate(java.util.Calendar userBirthDate) {
+    public void setUserBirthDate(java.util.Date userBirthDate) {
         this.userBirthDate = userBirthDate;
     }
 

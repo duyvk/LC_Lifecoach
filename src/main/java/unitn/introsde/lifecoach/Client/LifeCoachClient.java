@@ -29,7 +29,6 @@ public class LifeCoachClient {
 		
 	}
 	
-	
 	private void demo() {
 		String protocol = "http://";
 		String port = ":5910";
@@ -57,24 +56,21 @@ public class LifeCoachClient {
 				"\t4. POST Tasks/  The user with id user_id add task \n" +
 				"\t5. Send   Tasks/Reminder/User/{user_id}  sending reminder for users about the tasks of the day \n" +
 				"\t6. Send   Tasks/Reminder/Caregiver/{cg_id}  sending reminder for users about the tasks of the day \n" +
-				"0. exit ^_^"
-				;
+				"0. exit ^_^";
 	
-
 		
 		ClientConfig config = new DefaultClientConfig();
         Client client = Client.create(config);
         WebResource resource = client.resource(baseUrl);
 
 
-        Scanner scanner = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String url;
         int selected = 100;
         try {
+            Scanner scanner = new Scanner(System.in);
         	while (selected !=0){
 
-        		
         		String firstname,lastname,gender,email, birthdate;
         		int user_id;
         		
@@ -88,7 +84,7 @@ public class LifeCoachClient {
         					getUserbyId(resource);
 				break;
         			case	2:			
-							url = baseUrl + "/User";
+							url = baseUrl + "/user";
 				
 							System.out.println("Enter the user firstname ");
 							firstname=br.readLine();
@@ -97,8 +93,6 @@ public class LifeCoachClient {
 							lastname=br.readLine();
                     
 							System.out.println("Enter the user birthdate");
-							
-						//	c.setTime(;
 							birthdate=br.readLine();
                     
 							System.out.println("Enter the user email ");
@@ -115,35 +109,24 @@ public class LifeCoachClient {
 				
 							break;
         		}
-				System.out.println(options);
+        		if(selected!=0)
+        			System.out.println(options);
 				System.out.println("Choose the number: ");
 				selected = Integer.parseInt(scanner.next().toString());
         			}
     			br.close();
-    			} 
+    		} 
         	catch (Exception e) {
     				System.err.println("Something went wrong. Check the URI and Parameters !");
     				e.printStackTrace();
     			}
     		
     	}	
-	
-	/**
-	 * Report.
-	 *
-	 * @param msg the msg
-	 * @param response the response
-	 */
+
 	private void report(String msg, String response) {
 		System.out.println("\n" + msg + response);
 	}
 	
-	/**
-	 * Gets the  user with a specific Id.
-	 *
-	 * @param resource the resource
-	 * @return the a user
-	 */
 	private void getUserbyId(WebResource resource){
 		System.out.println(resource.getURI());
 		String response = 
@@ -160,18 +143,6 @@ public class LifeCoachClient {
 	
 	/**
 	 * Add user 
-	 *
-	 * @param resource the resource
-	 * @param ttypeid the task type id
-	 * @param cgid the user Id
-	 * @param uid the Care giver Id
-	 * @param tfromtime the task from time
-	 * @param taddress the task address
-	 * @param tcgchecked the task care giver checked
-	 * @param tuserchecked the task user checked
-	 * @param tnote the task note
-	 * @param tstatus the task status
-	 * @param ttotime the task to time
 	 */
 	private void addUser(WebResource resource,String firstname, String lastname,
 			String gender,String email,String birthdate){
@@ -179,14 +150,11 @@ public class LifeCoachClient {
 		System.out.println(resource.getURI());
 		
 		Form form = new Form();
-		//if(!ttid.trim().equals(""))
-			form.add("firstname",firstname );
-	//	if(!cg_id.trim().equals(""))
-			form.add("lastname",lastname );
-		    form.add("gender", gender);
-		//if(!schfromtime.trim().equals(""))
-			form.add("email", email);
-			form.add("birthdate",birthdate);
+		form.add("user_first_name",firstname );
+		form.add("user_last_name",lastname );
+		form.add("user_gender", gender);
+		form.add("user_email", email);
+		form.add("user_birth_date",birthdate);
 		
 		ClientResponse response = 
 			resource.type(MediaType.APPLICATION_FORM_URLENCODED_TYPE)

@@ -1,11 +1,11 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=Nouri/master
 eclipse.preferences.version=1
-<<<<<<< HEAD
-=======
 encoding//src/main/java/unitn/introsde/quote_service/ws/Quote.java=UTF-8
 encoding//src/main/java/unitn/introsde/quote_service/ws/QuoteImplPortBindingStub.java=UTF-8
 encoding//src/main/java/unitn/introsde/quote_service/ws/QuoteService.java=UTF-8
 encoding//src/main/java/unitn/introsde/quote_service/ws/QuoteServiceLocator.java=UTF-8
->>>>>>> Nouri/master
 encoding//src/main/java/unitn/introsde/storage_service/ws/Caregiver.java=UTF-8
 encoding//src/main/java/unitn/introsde/storage_service/ws/Externalsource.java=UTF-8
 encoding//src/main/java/unitn/introsde/storage_service/ws/Food.java=UTF-8
